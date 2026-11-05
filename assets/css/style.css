@@ -1,0 +1,207 @@
+:root {
+  --ink: #12211c;
+  --muted: #68756f;
+  --paper: #f7f8f5;
+  --accent: #ef6a45;
+  --accent-dark: #b8442c;
+}
+
+body {
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 88% 5%, rgba(239, 106, 69, .11), transparent 24rem),
+    linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+}
+
+.container-xl {
+  max-width: 1320px;
+}
+
+.title-mark {
+  width: .4rem;
+  height: 4rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), #f3a640);
+}
+
+.eyebrow {
+  color: var(--accent-dark);
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .18em;
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #17221f;
+}
+
+.carousel-item::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, rgba(8, 18, 15, .68) 0%, rgba(8, 18, 15, .16) 54%, transparent 78%);
+  pointer-events: none;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1280 / 500;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  right: auto;
+  bottom: 3.25rem;
+  left: clamp(2.25rem, 7vw, 6rem);
+  z-index: 2;
+  max-width: 38rem;
+}
+
+.carousel-caption h2 {
+  margin: .55rem 0 .7rem;
+  font-size: clamp(1.75rem, 3.2vw, 3.25rem);
+  font-weight: 650;
+  letter-spacing: -.03em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .25);
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+  color: rgba(255,255,255,.84);
+  font-size: clamp(.92rem, 1.3vw, 1.12rem);
+}
+
+.slide-number {
+  display: inline-block;
+  padding: .35rem .7rem;
+  border: 1px solid rgba(255, 255, 255, .34);
+  border-radius: 999px;
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-indicators {
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 1.8rem;
+  height: .22rem;
+  border-radius: 999px;
+}
+
+.section-heading {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.destination-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 .6rem 1.8rem rgba(28, 45, 38, .09);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-.4rem);
+  box-shadow: 0 1rem 2.4rem rgba(28, 45, 38, .16);
+}
+
+.destination-card .card-img-top {
+  height: 12rem;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.destination-card:hover .card-img-top {
+  transform: scale(1.035);
+}
+
+.destination-card .card-body {
+  position: relative;
+  padding: 1.35rem 1.35rem 1.5rem;
+}
+
+.card-index {
+  position: absolute;
+  top: -1.15rem;
+  right: 1rem;
+  display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.card-title {
+  margin-bottom: .55rem;
+  letter-spacing: -.01em;
+}
+
+.card-text {
+  font-size: .9rem;
+  line-height: 1.65;
+}
+
+footer hr {
+  border-top-color: rgba(18, 33, 28, .22);
+}
+
+.student-info {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: .04em;
+}
+
+.student-info span {
+  color: var(--accent);
+}
+
+@media (max-width: 767.98px) {
+  header {
+    padding-bottom: 1.5rem !important;
+  }
+
+  .title-mark {
+    height: 3.2rem;
+  }
+
+  .carousel-item img {
+    min-height: 22rem;
+  }
+
+  .carousel-caption {
+    right: 2rem;
+    bottom: 2.4rem;
+    left: 2rem;
+  }
+
+  .carousel-caption p {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-card,
+  .destination-card .card-img-top {
+    transition: none;
+  }
+}
+
